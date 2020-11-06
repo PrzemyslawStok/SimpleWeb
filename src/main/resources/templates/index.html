@@ -1,14 +1,15 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
 <body>
 <h1>Nagłówek</h1>
-<p th:text="'Imię: '+${name}"/>
+<p th:text="'Imię:'+${student.name}+' Nazwisko: '+${student.surname}"></p>
+<p th:text="'Imię: '+${name}"></p>
 
 <tr th:each="value: ${array}">
-    <td th:text="${value}"/>
+    <td th:text="${value}"></td>
 </tr>
 </body>
 </html>
