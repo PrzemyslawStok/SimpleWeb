@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController
 @Controller
 class SimpleController {
     @RequestMapping("")
-    @ResponseBody
-    fun getHome():String{
-        return "Strona główna"
+    fun getHome(model: Model):String{
+        model.addAttribute("autor",Student("Przemysław","Stokłosa"))
+        return "home"
     }
     @RequestMapping("index")
     fun getInfo(model: Model):String{
