@@ -6,6 +6,10 @@
 <body>
 <h1>Nagłówek</h1>
 <p th:text="'Imię: '+${name}"/>
+
+<tr th:each="value: ${array}">
+    <td th:text="${value}"/>
+</tr>
 </body>
 </html>
 

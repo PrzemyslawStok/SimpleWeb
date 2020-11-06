@@ -17,6 +17,7 @@ class SimpleController {
     @RequestMapping("index")
     fun getInfo(model: Model):String{
         model.addAttribute("name","Przemysław")
+        model.addAttribute("array",IntArray(10){it*it})
         return "index"
     }
 
