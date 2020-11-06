@@ -1,6 +1,7 @@
 package com.example.SimpleWeb
 
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseBody
@@ -14,7 +15,8 @@ class SimpleController {
         return "Strona główna"
     }
     @RequestMapping("index")
-    fun getInfo():String{
+    fun getInfo(model: Model):String{
+        model.addAttribute("name","Przemysław")
         return "index"
     }
 
