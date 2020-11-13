@@ -22,4 +22,15 @@ class SimpleController {
         return "index"
     }
 
+    @RequestMapping("tablica")
+    @ResponseBody
+    fun getArray():IntArray{
+        return IntArray(100){it}
+    }
+
+    @RequestMapping("tablicahtml")
+    fun getArrayHtml():String{
+        return ""
+    }
+
 }
