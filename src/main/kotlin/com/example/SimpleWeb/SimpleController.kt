@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController
 
 @Controller
 class SimpleController {
+    var array = 2
+
     @RequestMapping("")
     fun getHome(model: Model):String{
         model.addAttribute("autor",Student("Przemysław","Stokłosa"))
@@ -33,5 +35,6 @@ class SimpleController {
         model.addAttribute("array",IntArray(100){it})
         return "array"
     }
+
 
 }
