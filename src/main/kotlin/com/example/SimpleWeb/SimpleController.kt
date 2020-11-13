@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @Controller
 class SimpleController {
-    var array = 2
+    var tab = mutableListOf<Int>()
 
     @RequestMapping("")
     fun getHome(model: Model):String{
@@ -39,6 +39,9 @@ class SimpleController {
     @RequestMapping("addnumber")
     fun addNumber(number: Int){
 
+    }
+
+    init{
     }
 
 }
