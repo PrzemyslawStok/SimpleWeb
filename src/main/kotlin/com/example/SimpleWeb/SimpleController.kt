@@ -36,5 +36,9 @@ class SimpleController {
         return "array"
     }
 
+    @RequestMapping("addnumber")
+    fun addNumber(number: Int){
+
+    }
 
 }
