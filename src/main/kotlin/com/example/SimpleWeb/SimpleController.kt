@@ -29,7 +29,8 @@ class SimpleController {
     }
 
     @RequestMapping("tablicahtml")
-    fun getArrayHtml():String{
+    fun getArrayHtml(model: Model):String{
+        model.addAttribute("array",IntArray(100){it})
         return "array"
     }
 

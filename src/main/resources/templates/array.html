@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-Tutaj powinna być zawartość tablicy
+<tr th:each="value: ${array}">
+    <td th:text="${value}"></td>
+</tr>
 </body>
 </html>
