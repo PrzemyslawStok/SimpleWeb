@@ -30,7 +30,7 @@ class SimpleController {
 
     @RequestMapping("tablicahtml")
     fun getArrayHtml():String{
-        return ""
+        return "array"
     }
 
 }
