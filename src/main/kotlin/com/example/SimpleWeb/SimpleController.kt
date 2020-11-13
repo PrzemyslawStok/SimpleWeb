@@ -2,10 +2,7 @@ package com.example.SimpleWeb
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @Controller
 class SimpleController {
@@ -26,22 +23,23 @@ class SimpleController {
 
     @RequestMapping("tablica")
     @ResponseBody
-    fun getArray():IntArray{
-        return IntArray(100){it}
+    fun getArray():MutableList<Int>{
+        return tab
     }
 
     @RequestMapping("tablicahtml")
     fun getArrayHtml(model: Model):String{
-        model.addAttribute("array",IntArray(100){it})
+        model.addAttribute("array",tab)
         return "array"
     }
 
     @RequestMapping("addnumber")
-    fun addNumber(number: Int){
+    fun addNumber(@RequestParam("number") number: Int){
 
     }
 
     init{
+        tab.addAll(IntArray(100){it}.asList())
     }
 
 }
