@@ -2,6 +2,7 @@ package com.example.SimpleWeb
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
+import kotlin.math.sqrt
 
 @SpringBootTest
 class SimpleWebApplicationTests {
@@ -9,9 +10,11 @@ class SimpleWebApplicationTests {
 	@Test
 	fun equationTest(){
 
-		val y = squareEquation(1.0,5.0, 2.0, 1.0)
+		val y = squareEquation(1.0,5.0, 2.0, 2.1)
 
-		val value = 10.0
+		println("Y wynosi: $y")
+
+		val value = 16.0
 
 		if(y==value)
 			assert(true)
@@ -21,7 +24,7 @@ class SimpleWebApplicationTests {
 	}
 
 	fun squareEquation(a: Double, b: Double, c: Double, x: Double):Double{
-		return a*x*x+b*x+c
+		return sqrt(a*x*x+b*x+c)
 	}
 
 	@Test
