@@ -6,13 +6,14 @@ import org.springframework.web.bind.annotation.*
 
 @Controller
 class SimpleController {
-    var tab = mutableListOf<Int>()
+    final var tab = mutableListOf<Int>()
 
     @RequestMapping("")
     fun getHome(model: Model):String{
         model.addAttribute("autor",Student("Przemysław","Stokłosa"))
         return "home"
     }
+
     @RequestMapping("index")
     fun getInfo(model: Model):String{
         model.addAttribute("student",Student("Przemysław","Stokłosa"))
@@ -35,7 +36,7 @@ class SimpleController {
 
     @RequestMapping("addnumber")
     fun addNumber(@RequestParam("number") number: Int){
-
+        tab.add(number)
     }
 
     init{
